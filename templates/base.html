@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <br>
+    <!-- NAVBAR -->
+    <div class="container">
+          <nav id="navbar-example2" class="navbar bg-light px-3 mb-3">
+            
+            <!-- Example single danger button -->
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Section
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Create</a></li>
+                <li><a class="dropdown-item" href="#">Edit</a></li>
+                <li><a class="dropdown-item" href="#">Delete</a></li>
+              </ul>
+            </div>
+ 
+            <ul class="nav nav-pills">
+              {% for x in data %}
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspy{{x.id}}">{{x.key}}</a>
+              </li>
+
+              {% endfor %}
+            </ul>
+          </nav>
+          <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0" style="text-align: center;">
+            {% block content %}
+
+            {% endblock content %}
+     
+          </div>
+          
+    </div>
+
+    <br><br><br><br>
+    
+    
+    <br><br>
+        <!-- FOOTER-->
+        <footer>
+          <div class="container">
+            <div class="wrapper">
+          
+              <body>
+                <center>
+                  <p class="copyright">
+                  <div class="footer-nav">
+                    <br>
+                    <div class="footer-social">
+                      <a href="#">
+                        <img src="{{ url_for('static', filename='assets/FacebookLogo.png') }}" alt="" />
+                      </a>
+          
+                      <a href="https://github.com/feryalicization" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/InstagramLogo.png') }}" alt="" />
+                      </a>
+          
+                    </div>
+             
+                    <br>
+                    <p>fery.chaerul.ismail94@gmail.com</p>
+                  </div>
+                  This website was for test Inaugurasi and design by fery &copy; 2022
+                  </p>
+                </center>
+              </body>
+            </div>
+    
+          </div>
+          
+          <!-- End of the Footer -->
+    
+          
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
